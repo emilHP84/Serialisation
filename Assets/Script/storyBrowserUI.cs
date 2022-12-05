@@ -16,7 +16,6 @@ public class storyBrowserUI : MonoBehaviour
             storyFileButton.onClick.AddListener(delegate {
                 PlayerPrefs.SetString(properties.Prefs.LoadedStory, localName);
                 Scene scene = SceneManager.GetActiveScene();
-                
             });
             storyFileButton.GetComponentInChildren<TextMeshProUGUI>().text = fileName;
         }

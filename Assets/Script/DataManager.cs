@@ -12,7 +12,6 @@ namespace Script.Managers {
    public class DataManager : MonoBehaviour {
       private static readonly fsSerializer Serializer = new fsSerializer();
       private static readonly string StoryPath = Application.streamingAssetsPath;
-
       public static List<string> StoryFiles => Directory.GetFiles(StoryPath, "*.sty").Select(Path.GetFileName).ToList();
 
       public static Story StoryLoad(string storyNameWithExtension) {
