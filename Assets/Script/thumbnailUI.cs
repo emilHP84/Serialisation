@@ -25,7 +25,6 @@ public class thumbnailUI : MonoBehaviour {
         ChoiceUIs.ForEach(component => Destroy(component.gameObject));
     }
     public void Load(int index) {
-        
         Reset();
         Thumbnail thumbnail = CurrentStory.Thumbnails[index];
         _guid = thumbnail.Guid;
@@ -34,7 +33,7 @@ public class thumbnailUI : MonoBehaviour {
         foreach (Choice choice in thumbnail.Choices) {
             GameObject instantiate = Instantiate(ChoicePrefab, ChoiceContent);
             choiseUI choiceUI = instantiate.GetComponent<choiseUI>();
-            choiceUI.Load(choice);
+            choiceUI.Load(choice, this);
         }
     }
 }
